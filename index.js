@@ -18,6 +18,7 @@ News.prototype.getArticles = function(params, callback) {
 
 	callback = (typeof callback === 'function') ? callback : function() {};
 
+	// TODO: look at this error
 	if(typeof params === 'function' || params.length === 0) {
 		// throw error
 		console.log('Missing the params object');
