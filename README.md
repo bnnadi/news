@@ -14,6 +14,7 @@ First install dependencies
 ```javascript
 npm install
 ```
+
 Second create an .env file  and set with the correct route
 ```
 NEWS_ARTICLES
