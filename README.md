@@ -10,7 +10,11 @@ If you use this in a project, add a 'powered by' attribution link back to NewsAP
 
 
 ## How to use
-First  create an .env file  and set with the correct route
+First install dependencies
+```javascript
+npm install
+```
+Second create an .env file  and set with the correct route
 ```
 NEWS_ARTICLES
 NEWS_SOURCES
