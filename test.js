@@ -16,7 +16,7 @@ describe('News Module', function() {
 
 	it('Reading all the news sources', function(done) {
 
-		news.getSoures(function(err, res){
+		news.getSources(function(err, res){
 
 			var response = res.body;
 
@@ -43,10 +43,13 @@ describe('News Module', function() {
 	it('Read artices from CNN', function(done) {
 
 		var params = {
-			source: 'cnn',
+			// source: 'cnn',
+			sortBy: 'popular',
 		};
 
-		news.getArticles(params ,function(err, res){
+		news.getArticles(function(err, res){
+
+			console.log(err);
 
 			var response = res.body;
 

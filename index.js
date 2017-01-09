@@ -12,7 +12,9 @@ function getApiKey() {
 
 News.prototype.getSources = function(callback) {
 
-	callback = (typeof callback === 'function') ? callback : function() {};
+	if (!callback || typeof callback !== 'function') {
+        return;
+    }
 
 	request
 		.get(process.env.NEWS_SOURCES + '?language'+ language)
@@ -21,14 +23,15 @@ News.prototype.getSources = function(callback) {
 
 News.prototype.getArticles = function(params, callback) {
 
-	callback = (typeof callback === 'function') ? callback : function() {};
-
-	// TODO: look at this error
-	if(typeof params === 'function' || params.length === 0) {
+	if(typeof params === 'function') {
 		// throw error
-		console.log('Missing the params object');
-		callback({error: 'Missing the params object'});
-		return;
+		callback = params;
+		callback(new Error('Missing the params object'));
+	}
+
+	if(!params.source) {
+		// throw error
+		callback(new Error('source is a required'));
 	}
 
 	param = '?source='+ params.source;
