@@ -12,7 +12,7 @@ If you use this in a project, add a 'powered by' attribution link back to NewsAP
 ## How to use
 First install dependencies
 ```javascript
-npm install
+npm install node-news
 ```
 
 Second create an .env file  and set with the correct route
