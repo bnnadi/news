@@ -27,7 +27,7 @@ News.prototype.getArticles = function(params, callback) {
 		// throw error
 		callback = params;
 		callback(new Error('Missing the params object'));
-		returnl
+		return;
 	}
 
 	if(getApiKey() === '') {
@@ -45,10 +45,10 @@ News.prototype.getArticles = function(params, callback) {
 	param = '?source='+ params.source;
 
 	if(params.sortBy) {
-		param = '&sortBy=' + params.sortBy;
+		param += '&sortBy=' + params.sortBy;
 	}
 
-	param = param +'&apiKey='+ getApiKey();
+	param += '&apiKey='+ getApiKey();
 
 	request
 		.get(process.env.NEWS_ARTICLES + param)

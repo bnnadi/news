@@ -44,12 +44,10 @@ describe('News Module', function() {
 
 		var params = {
 			source: 'cnn',
-			sortBy: 'popular',
+			sortBy: 'popular'
 		};
 
-		news.getArticles(function(err, res){
-
-			console.log(err);
+		news.getArticles(params, function(err, res){
 
 			var response = res.body;
 
