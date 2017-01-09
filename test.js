@@ -3,7 +3,6 @@ var expect = require('expect.js');
 
 var news = new News();
 
-
 describe('News Module', function() {
 
 	before(function(done) {

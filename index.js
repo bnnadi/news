@@ -10,7 +10,7 @@ function getApiKey() {
 	return apiKey;
 }
 
-News.prototype.getSoures = function(callback) {
+News.prototype.getSources = function(callback) {
 
 	callback = (typeof callback === 'function') ? callback : function() {};
 
