@@ -14,7 +14,8 @@
     "news",
     "api"
   ],
-  "author": "Bisike Nnadi",
+  "author": "Bisike Nnadi <bisike.nnadi@gmail.com>",
+  "contributors" : [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bnnadi/news/issues"
