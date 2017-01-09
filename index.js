@@ -3,7 +3,12 @@ var request = require('superagent');
 
 var News = function() {};
 
+var apiKey = '';
 var language = '';
+
+function getApiKey() {
+	return apiKey;
+}
 
 News.prototype.getSoures = function(callback) {
 
@@ -32,16 +37,21 @@ News.prototype.getArticles = function(params, callback) {
 		param = '&sortBy=' + params.sortBy;
 	}
 
-	param = param +'&apiKey='+process.env.API_KEY;
+	param = param +'&apiKey='+ getApiKey();
 
 	request
 		.get(process.env.NEWS_ARTICLES + param)
 		.end(callback);
 };
 
+News.prototype.setAPIKey= function(key) {
+	apiKey = key || process.env.API_KEY;
+};
+
 News.prototype.getLanguage = function() {
 	return language;
 };
+
 News.prototype.setLanguage = function(language) {
 	language = language || 'en';
 };

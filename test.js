@@ -6,6 +6,14 @@ var news = new News();
 
 describe('News Module', function() {
 
+	before(function(done) {
+
+		news.setLanguage();
+		news.setAPIKey();
+
+		done();
+	});
+
 
 	it('Reading all the news sources', function(done) {
 
