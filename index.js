@@ -27,11 +27,19 @@ News.prototype.getArticles = function(params, callback) {
 		// throw error
 		callback = params;
 		callback(new Error('Missing the params object'));
+		returnl
+	}
+
+	if(getApiKey() === '') {
+		// throw error
+		callback(new Error('Api Key is a required'));
+		return;
 	}
 
 	if(!params.source) {
 		// throw error
 		callback(new Error('source is a required'));
+		return;
 	}
 
 	param = '?source='+ params.source;

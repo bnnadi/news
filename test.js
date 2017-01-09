@@ -43,7 +43,7 @@ describe('News Module', function() {
 	it('Read artices from CNN', function(done) {
 
 		var params = {
-			// source: 'cnn',
+			source: 'cnn',
 			sortBy: 'popular',
 		};
 
