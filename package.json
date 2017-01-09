@@ -1,6 +1,6 @@
 {
   "name": "node-news",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "news api",
   "main": "index.js",
   "scripts": {
