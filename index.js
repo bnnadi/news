@@ -4,6 +4,7 @@ var request = require('superagent');
 var News = function() {};
 
 var apiKey = '';
+var apiEndpint = {};
 var language = '';
 
 function getApiKey() {
@@ -14,6 +15,12 @@ News.prototype.getSources = function(callback) {
 
 	if (!callback || typeof callback !== 'function') {
         return;
+    }
+
+    var source = apiEndpint.source || process.env.NEWS_SOURCES;
+
+    if(!source) {
+    	callback({error: 'Api endpoint is needed'});
     }
 
 	request
@@ -29,6 +36,12 @@ News.prototype.getArticles = function(params, callback) {
 		callback(new Error('Missing the params object'));
 		return;
 	}
+
+	var articles = apiEndpint.articles || process.env.NEWS_SOURCES;
+
+    if(!articles) {
+    	callback({error: 'Api endpoint is needed'});
+    }
 
 	if(getApiKey() === '') {
 		// throw error
@@ -65,6 +78,16 @@ News.prototype.getLanguage = function() {
 
 News.prototype.setLanguage = function(language) {
 	language = language || 'en';
+};
+
+News.prototype.setApiEndpints= function(routes) {
+
+	if(typeof routes !== 'object') {
+		return 'Must be an object';
+	}
+
+	if(routes.hasProperty('source') && routes.hasProperty('articles'))
+		apiEndpint = routes;
 };
 
 module.exports = News;

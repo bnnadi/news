@@ -44,7 +44,6 @@ describe('News Module', function() {
 
 		var params = {
 			source: 'cnn',
-			sortBy: 'popular'
 		};
 
 		news.getArticles(params, function(err, res){

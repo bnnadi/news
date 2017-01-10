@@ -15,10 +15,16 @@ First install dependencies
 npm install node-news
 ```
 
-Second create an .env file  and set with the correct route
+Second you can either create an .env file and set with the correct route with these variables
 ```
 NEWS_ARTICLES
 NEWS_SOURCES
+```
+or call this function passing an object with source and articles
+```javascript
+
+news.setApiEndpints({source: '', articles:''});
+
 ```
 
 ```javascript
